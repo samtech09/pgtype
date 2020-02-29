@@ -152,7 +152,7 @@ func (src Text) MarshalJSON() ([]byte, error) {
 	case Null:
 		return []byte("null"), nil
 	case Undefined:
-		return []byte(""), nil
+		return json.Marshal("")
 	}
 
 	return nil, errBadStatus
