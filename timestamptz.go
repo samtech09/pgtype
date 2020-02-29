@@ -234,7 +234,7 @@ func (src Timestamptz) MarshalJSON() ([]byte, error) {
 	case Null:
 		return []byte("null"), nil
 	case Undefined:
-		return nil, errUndefined
+		return json.Marshal(src.Time.Format(time.RFC3339))
 	}
 
 	if src.Status != Present {

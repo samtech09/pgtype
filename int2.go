@@ -196,9 +196,9 @@ func (src Int2) Value() (driver.Value, error) {
 	case Present:
 		return int64(src.Int), nil
 	case Null:
-		return nil, nil
+		return []byte("0"), nil
 	default:
-		return nil, errUndefined
+		return []byte("0"), nil
 	}
 }
 

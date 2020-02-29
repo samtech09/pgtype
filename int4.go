@@ -199,9 +199,9 @@ func (src Int4) MarshalJSON() ([]byte, error) {
 	case Present:
 		return []byte(strconv.FormatInt(int64(src.Int), 10)), nil
 	case Null:
-		return []byte("null"), nil
+		return []byte("0"), nil
 	case Undefined:
-		return nil, errUndefined
+		return []byte("0"), nil
 	}
 
 	return nil, errBadStatus

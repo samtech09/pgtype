@@ -152,7 +152,7 @@ func (src Text) MarshalJSON() ([]byte, error) {
 	case Null:
 		return []byte("null"), nil
 	case Undefined:
-		return nil, errUndefined
+		return []byte(""), nil
 	}
 
 	return nil, errBadStatus
